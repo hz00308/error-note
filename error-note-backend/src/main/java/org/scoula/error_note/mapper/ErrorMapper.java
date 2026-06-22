@@ -11,6 +11,15 @@ public interface ErrorMapper {
 
     // 에러 카테고리별 조회
     List<ErrorVO> getErrorListByCategory(int cid);
+  
+    // 에러 상세 조회
+    ErrorVO getError(int eid);
+
+    // 에러 등록
+    int createError(ErrorVO error);
+
+    // 에러 수정
+    int updateError(ErrorVO error);
 
     // 에러 삭제
     int deleteError(int eid);
