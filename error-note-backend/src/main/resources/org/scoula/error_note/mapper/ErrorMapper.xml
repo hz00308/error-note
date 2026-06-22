@@ -5,4 +5,28 @@
 
 <mapper namespace="org.scoula.error_note.mapper.ErrorMapper">
 
+    <insert id="createError">
+        insert into errortbl(CategoryID, Title, Contents)
+        values (#{categoryId}, #{title}, #{contents})
+        <selectKey resultType="int" keyProperty="errorId" keyColumn="ErrorID" order="AFTER">
+            select last_insert_id()
+        </selectKey>
+    </insert>
+
+    <update id="updateError">
+        update errortbl
+        set CategoryID  = #{categoryId},
+            Title       = #{title},
+            Contents    = #{contents},
+            UpdatedAt   = now()
+        where ErrorID = #{errorId}
+    </update>
+
+    <select id="getError" resultType="org.scoula.error_note.domain.ErrorVO">
+        select *
+        from errortbl inner join categorytbl
+        using (CategoryID)
+        where ErrorID = #{eid}
+    </select>
+
 </mapper>
