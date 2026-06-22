@@ -5,7 +5,7 @@
 
 <mapper namespace="org.scoula.error_note.mapper.ErrorMapper">
     <delete id="deleteError">
-        delete from errortbl where errorid=#{errorId}
+        delete from errortbl where errorid=#{eid}
     </delete>
 
     <select id="getErrorList" resultType="org.scoula.error_note.domain.ErrorVO">
@@ -18,7 +18,7 @@
         select *
         from errortbl inner join categorytbl
         using (categoryid)
-        where categoryid = #{categoryId}
+        where categoryid = #{cid}
     </select>
 
 
