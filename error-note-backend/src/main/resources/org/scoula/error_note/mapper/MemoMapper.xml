@@ -5,4 +5,20 @@
 
 <mapper namespace="org.scoula.error_note.mapper.MemoMapper">
 
+    <insert id="createMemo" parameterType="org.scoula.error_note.domain.MemoVO"
+            useGeneratedKeys="true" keyProperty="memoID">
+        INSERT INTO memotbl (ErrorID, Contents)
+        VALUES (#{errorId}, #{contents})
+    </insert>
+
+    <delete id="deleteMemo" parameterType="int">
+        DELETE FROM memotbl
+        WHERE MemoID = #{memoId}
+    </delete>
+
+    <select id="getMemoByError" parameterType="int" resultType="org.scoula.error_note.domain.MemoVO">
+        SELECT *
+        FROM memotbl
+        WHERE ErrorID = #{errorId}
+    </select>
 </mapper>
