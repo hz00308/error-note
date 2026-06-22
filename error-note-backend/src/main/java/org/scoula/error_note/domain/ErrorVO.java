@@ -14,6 +14,7 @@ import java.util.Date;
 public class ErrorVO {
     private int errorId;
     private int categoryId;
+    private String categoryName;
     private String title;
     private String contents;
     private Date createdAt;
