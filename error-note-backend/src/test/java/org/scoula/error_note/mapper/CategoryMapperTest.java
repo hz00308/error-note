@@ -11,8 +11,6 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {RootConfig.class})
 @Log4j2
@@ -28,4 +26,37 @@ class CategoryMapperTest {
             log.info(category);
         }
     }
+
+    @Test
+    void createCategory() {
+        CategoryVO category = new CategoryVO();
+        category.setCategoryName("JavaScript");
+        int result = mapper.createCategory(category); // 영향받은 행 수
+        log.info(result);
+    }
+
+    @Test
+    void getOneCategory() {
+        CategoryVO category = new CategoryVO();
+        category.setCategoryId(1);
+        CategoryVO result = mapper.getOneCategory(category);
+        log.info(result);
+    }
+
+    @Test
+    void updateCategory() {
+        CategoryVO category = new CategoryVO();
+        category.setCategoryId(1);
+        category.setCategoryName("수정된 카테고리");
+        int result = mapper.updateCategory(category);
+        log.info("수정 행 수 : " + result);
+    }
+
+    @Test
+    void deleteCategory() {
+        int categoryId = 1;
+        int result = mapper.deleteCategory(categoryId);
+        log.info("삭제 결과: " + result);
+    }
+
 }
