@@ -13,7 +13,7 @@ public interface CategoryMapper {
     int createCategory(CategoryVO category);
 
     // 카테고리 하나 조회
-    CategoryVO getOneCategory(CategoryVO category);
+    CategoryVO getOneCategory(int categoryId);
 
     // 카테고리 수정
     int updateCategory(CategoryVO category);
