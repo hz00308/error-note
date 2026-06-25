@@ -17,12 +17,12 @@ public class ErrorServiceImpl implements ErrorService{
 
     @Override // s
     public List<ErrorDTO> getErrorList() {
-        return List.of();
+        return mapper.getErrorList().stream().map(ErrorDTO::of).toList();
     }
 
     @Override // s
     public List<ErrorDTO> getErrorListByCategory(int cid) {
-        return List.of();
+        return mapper.getErrorListByCategory(cid).stream().map(ErrorDTO::of).toList();
     }
 
     @Override
