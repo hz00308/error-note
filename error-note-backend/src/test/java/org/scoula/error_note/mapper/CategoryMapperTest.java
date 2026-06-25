@@ -37,9 +37,7 @@ class CategoryMapperTest {
 
     @Test
     void getOneCategory() {
-        CategoryVO category = new CategoryVO();
-        category.setCategoryId(1);
-        CategoryVO result = mapper.getOneCategory(category);
+        CategoryVO result = mapper.getOneCategory(2);
         log.info(result);
     }
 
