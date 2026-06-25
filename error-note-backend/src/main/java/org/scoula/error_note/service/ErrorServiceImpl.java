@@ -46,6 +46,8 @@ public class ErrorServiceImpl implements ErrorService{
 
     @Override //s
     public ErrorDTO deleteError(int eid) {
-        return null;
+        ErrorDTO error = getError(eid);
+        mapper.deleteError(eid);
+        return error;
     }
 }
