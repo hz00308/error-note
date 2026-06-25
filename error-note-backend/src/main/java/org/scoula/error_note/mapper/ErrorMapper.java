@@ -6,10 +6,10 @@ import java.util.List;
 
 public interface ErrorMapper {
 
-    // 에러 전체 조회
+    // 에러 전체 조회 /s
     List<ErrorVO> getErrorList();
 
-    // 에러 카테고리별 조회
+    // 에러 카테고리별 조회 /s
     List<ErrorVO> getErrorListByCategory(int cid);
   
     // 에러 상세 조회
@@ -21,6 +21,6 @@ public interface ErrorMapper {
     // 에러 수정
     int updateError(ErrorVO error);
 
-    // 에러 삭제
+    // 에러 삭제 /s
     int deleteError(int eid);
 }
