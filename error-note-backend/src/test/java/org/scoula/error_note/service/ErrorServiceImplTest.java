@@ -40,14 +40,24 @@ class ErrorServiceImplTest {
 
     @Test
     void getError() {
+        log.info(service.getError(1));
     }
 
     @Test
     void createError() {
+        ErrorDTO error = new ErrorDTO();
+        error.setCategoryId(2);
+        error.setTitle("RootConfig에 ComponentScan 빠트림!!!");
+        error.setContents("@Service 붙이고 나서 스캔하는 거 까먹지 말자");
+
+        log.info(service.createError(error));
     }
 
     @Test
     void updateError() {
+        ErrorDTO error = service.getError(1);
+        error.setTitle("서비스에서 제목 수정 테스트 중입니다");
+        log.info(service.updateError(error));
     }
 
     @Test
