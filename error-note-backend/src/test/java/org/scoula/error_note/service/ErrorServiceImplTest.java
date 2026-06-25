@@ -24,10 +24,18 @@ class ErrorServiceImplTest {
 
     @Test
     void getErrorList() {
+        List<ErrorDTO> list = service.getErrorList();
+        for(ErrorDTO error : list){
+            System.out.println(error);
+        }
     }
 
     @Test
     void getErrorListByCategory() {
+        List<ErrorDTO> list = service.getErrorListByCategory(2);
+        for(ErrorDTO error : list){
+            System.out.println(error);
+        }
     }
 
     @Test
@@ -44,5 +52,6 @@ class ErrorServiceImplTest {
 
     @Test
     void deleteError() {
+        log.info("delete RESULT: " + service.deleteError(2));
     }
 }
