@@ -2,6 +2,7 @@ package org.scoula.error_note.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.scoula.error_note.domain.ErrorVO;
 import org.scoula.error_note.dto.ErrorDTO;
 import org.scoula.error_note.mapper.ErrorMapper;
 import org.springframework.stereotype.Service;
@@ -27,17 +28,20 @@ public class ErrorServiceImpl implements ErrorService{
 
     @Override
     public ErrorDTO getError(int eid) {
-        return null;
+        return ErrorDTO.of(mapper.getError(eid));
     }
 
     @Override
     public ErrorDTO createError(ErrorDTO error) {
-        return null;
+        ErrorVO vo = error.toVO();
+        mapper.createError(vo);
+        return getError(vo.getErrorId());
     }
 
     @Override
     public ErrorDTO updateError(ErrorDTO error) {
-        return null;
+        mapper.updateError(error.toVO());
+        return getError(error.getErrorId());
     }
 
     @Override //s
