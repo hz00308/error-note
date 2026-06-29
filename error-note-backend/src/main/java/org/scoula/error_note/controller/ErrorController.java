@@ -29,12 +29,26 @@ public class ErrorController {
 
 
     // 에러 상세 조회
+    @GetMapping("/{eid}")
+    public ResponseEntity<ErrorDTO> getError(@PathVariable int eid) {
+        return ResponseEntity.ok(service.getError(eid));
+    }
 
 
     // 에러 등록
+    @PostMapping("")
+    public ResponseEntity<ErrorDTO> createError(@RequestBody ErrorDTO error) {
+        return ResponseEntity.ok(service.createError(error));
+    }
 
 
     // 에러 수정
+    @PutMapping("/{eid}")
+    public ResponseEntity<ErrorDTO> updateErrpr(@PathVariable int eid,
+                                                @RequestBody ErrorDTO error) {
+        error.setErrorId(eid);
+        return ResponseEntity.ok(service.updateError(error));
+    }
 
 
 //     에러 삭제 수민
