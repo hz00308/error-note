@@ -9,4 +9,30 @@
         select *
         from categorytbl
     </select>
+
+    <insert id="createCategory">
+        insert into categorytbl (
+            CategoryName
+        ) VALUES (
+            #{categoryName}
+        )
+    </insert>
+
+    <select id="getOneCategory" resultType="org.scoula.error_note.domain.CategoryVO">
+        select *
+        from categorytbl
+        where categoryId = #{categoryId}
+    </select>
+
+    <update id="updateCategory">
+        update categorytbl
+        set CategoryName = #{categoryName}
+        where CategoryId = #{categoryId}
+    </update>
+
+    <delete id="deleteCategory">
+        delete from categorytbl
+        where CategoryId = #{categoryId}
+    </delete>
+
 </mapper>
