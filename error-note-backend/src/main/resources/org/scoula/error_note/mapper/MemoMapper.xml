@@ -5,4 +5,23 @@
 
 <mapper namespace="org.scoula.error_note.mapper.MemoMapper">
 
+    <insert id="createMemo">
+        INSERT INTO memotbl (ErrorID, Contents)
+        VALUES (#{errorId}, #{contents})
+
+        <selectKey resultType="int" keyProperty="memoId" keyColumn="MemoID" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+
+    <delete id="deleteMemo">
+        DELETE FROM memotbl
+        WHERE MemoID = #{memoId}
+    </delete>
+
+    <select id="getMemoByError" resultType="MemoVO">
+        SELECT *
+        FROM memotbl
+        WHERE ErrorID = #{errorId}
+    </select>
 </mapper>
