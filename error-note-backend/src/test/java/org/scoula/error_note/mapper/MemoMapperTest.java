@@ -32,7 +32,7 @@ class MemoMapperTest {
     }
     @Test
     void deleteMemo() {
-        int targetMemoId = 16;
+        int targetMemoId = 9;
         int result = mapper.deleteMemo(targetMemoId);
         assertEquals(1, result, "메모 삭제에 실패했습니다. 해당 ID가 없을 수 있습니다.");
         log.info("삭제된 메모 행 수: " + result);

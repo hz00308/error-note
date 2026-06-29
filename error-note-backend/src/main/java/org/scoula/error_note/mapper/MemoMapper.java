@@ -7,7 +7,8 @@ import java.util.List;
 public interface MemoMapper {
 
     // 메모 등록
-    int createMemo(MemoVO memo);
+    //int createMemo(MemoVO memo);
+    public int createMemo(MemoVO memo);
 
     // 메모 삭제
     int deleteMemo(int memoId);
