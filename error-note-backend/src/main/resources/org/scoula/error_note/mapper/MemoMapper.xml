@@ -20,7 +20,7 @@
     </delete>
 
     <select id="getMemoByError" resultType="MemoVO">
-        SELECT *
+        SELECT MemoID, ErrorID, Contents, CreatedAt
         FROM memotbl
         WHERE ErrorID = #{errorId}
     </select>
