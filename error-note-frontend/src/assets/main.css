@@ -872,6 +872,7 @@ textarea:focus-visible {
 .memo-form textarea {
   resize: vertical;
   padding: 14px 15px;
+  font-size: 15px;
   line-height: 1.7;
 }
 
@@ -977,7 +978,7 @@ textarea:focus-visible {
 .detail-content {
   min-height: 260px;
   padding: clamp(27px, 5vw, 42px);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.9;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
@@ -1068,7 +1069,7 @@ textarea:focus-visible {
 
 .memo-item p {
   margin: 0 0 7px;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.65;
   white-space: pre-wrap;
 }

@@ -24,10 +24,10 @@
             <h1>{{ errorItem.title }}</h1>
             <div class="detail-date">
               <CalendarDays :size="15" />
-              <span>작성 {{ formatDateTime(errorItem.createdAt) }}</span>
+              <span>작성 {{ formatDate(errorItem.createdAt) }}</span>
               <template v-if="errorItem.updatedAt">
                 <span class="dot"></span>
-                <span>수정 {{ formatDateTime(errorItem.updatedAt) }}</span>
+                <span>수정 {{ formatDate(errorItem.updatedAt) }}</span>
               </template>
             </div>
           </div>
@@ -73,7 +73,7 @@
             <div class="memo-pin"><StickyNote :size="18" /></div>
             <div>
               <p>{{ memo.contents }}</p>
-              <span>{{ formatDateTime(memo.createdAt) }}</span>
+              <span>{{ formatDate(memo.createdAt) }}</span>
             </div>
             <button type="button" aria-label="메모 삭제" @click="removeMemo(memo.memoId)">
               <X :size="17" />
@@ -116,7 +116,7 @@ import { deleteError, getError } from '@/api/error'
 import { createMemo, deleteMemo, getMemos } from '@/api/memo'
 import BaseModal from '@/components/common/BaseModal.vue'
 import { useToast } from '@/composables/useToast'
-import { formatDateTime } from '@/utils/date'
+import { formatDate } from '@/utils/date'
 
 const route = useRoute()
 const router = useRouter()
