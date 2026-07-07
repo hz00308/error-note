@@ -1,7 +1,7 @@
 <template>
   <aside class="sidebar">
     <RouterLink class="brand" to="/errors" aria-label="Error Note 홈">
-      <span class="brand-mark"><Bug :size="25" stroke-width="2.4" /></span>
+      <span class="brand-mark"><FrogFaceIcon :size="27" :stroke-width="2.3" /></span>
       <span>Error Note</span>
     </RouterLink>
 
@@ -26,7 +26,8 @@
 
 <script setup>
 import { RouterLink } from 'vue-router'
-import { Bug, FolderOpen, Lightbulb, NotebookTabs } from '@lucide/vue'
+import { FolderOpen, Lightbulb, NotebookTabs } from '@lucide/vue'
+import FrogFaceIcon from '@/components/icons/FrogFaceIcon.vue'
 
 const navigation = [
   { label: '에러 노트', to: '/errors', icon: NotebookTabs },

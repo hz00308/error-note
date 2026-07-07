@@ -2,7 +2,7 @@
   <section class="not-found">
     <div class="not-found-art">
       <span>4</span>
-      <div><Bug :size="54" /></div>
+      <div><FrogFaceIcon :size="56" :stroke-width="1.8" /></div>
       <span>4</span>
     </div>
     <span class="eyebrow">A TINY DETOUR</span>
@@ -17,5 +17,6 @@
 
 <script setup>
 import { RouterLink } from 'vue-router'
-import { Bug, Home } from '@lucide/vue'
+import { Home } from '@lucide/vue'
+import FrogFaceIcon from '@/components/icons/FrogFaceIcon.vue'
 </script>

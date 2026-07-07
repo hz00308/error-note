@@ -1,7 +1,7 @@
 <template>
   <header class="topbar">
     <RouterLink class="mobile-brand" to="/errors">
-      <span class="brand-mark brand-mark--small"><Bug :size="21" /></span>
+      <span class="brand-mark brand-mark--small"><FrogFaceIcon :size="23" :stroke-width="2.3" /></span>
       <span>Error Note</span>
     </RouterLink>
 
@@ -23,5 +23,6 @@
 
 <script setup>
 import { RouterLink } from 'vue-router'
-import { Bug, FolderOpen, NotebookTabs } from '@lucide/vue'
+import { FolderOpen, NotebookTabs } from '@lucide/vue'
+import FrogFaceIcon from '@/components/icons/FrogFaceIcon.vue'
 </script>

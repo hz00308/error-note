@@ -1,7 +1,7 @@
 <template>
   <RouterLink class="error-card" :to="`/errors/${errorItem.errorId}`">
     <div class="error-card__icon">
-      <Bug :size="22" />
+      <FrogFaceIcon :size="23" />
     </div>
     <div class="error-card__body">
       <div class="error-card__top">
@@ -20,7 +20,8 @@
 
 <script setup>
 import { RouterLink } from 'vue-router'
-import { Bug, CalendarDays, ChevronRight } from '@lucide/vue'
+import { CalendarDays, ChevronRight } from '@lucide/vue'
+import FrogFaceIcon from '@/components/icons/FrogFaceIcon.vue'
 import { formatDate } from '@/utils/date'
 
 defineProps({
