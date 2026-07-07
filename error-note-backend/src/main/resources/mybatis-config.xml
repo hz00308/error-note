@@ -6,4 +6,8 @@
     <settings>
         <setting name="mapUnderscoreToCamelCase" value="true" />
     </settings>
+    
+    <typeAliases>
+        <typeAlias alias="MemoVO" type="org.scoula.error_note.domain.MemoVO"/>
+    </typeAliases>
 </configuration>

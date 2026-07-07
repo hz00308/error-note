@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.scoula.error_note.mapper.ErrorMapper">
+    <delete id="deleteError">
+        delete from errortbl where errorid=#{eid}
+    </delete>
+
+    <select id="getErrorList" resultType="org.scoula.error_note.domain.ErrorVO">
+        select *
+        from errortbl inner join categorytbl
+        using (categoryid)
+    </select>
+
+    <select id="getErrorListByCategory" resultType="org.scoula.error_note.domain.ErrorVO">
+        select *
+        from errortbl inner join categorytbl
+        using (categoryid)
+        where categoryid = #{cid}
+    </select>
+
+
+
+
+    <insert id="createError">
+        insert into errortbl(CategoryID, Title, Contents)
+        values (#{categoryId}, #{title}, #{contents})
+        <selectKey resultType="int" keyProperty="errorId" keyColumn="ErrorID" order="AFTER">
+            select last_insert_id()
+        </selectKey>
+    </insert>
+
+    <update id="updateError">
+        update errortbl
+        set CategoryID  = #{categoryId},
+            Title       = #{title},
+            Contents    = #{contents},
+            UpdatedAt   = now()
+        where ErrorID = #{errorId}
+    </update>
+
+    <select id="getError" resultType="org.scoula.error_note.domain.ErrorVO">
+        select *
+        from errortbl inner join categorytbl
+        using (CategoryID)
+        where ErrorID = #{eid}
+    </select>
+
+</mapper>

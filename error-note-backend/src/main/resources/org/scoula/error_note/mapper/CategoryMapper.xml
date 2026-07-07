@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.scoula.error_note.mapper.CategoryMapper">
+
+    <select id="getCategoryList" resultType="org.scoula.error_note.domain.CategoryVO">
+        select *
+        from categorytbl
+    </select>
+
+    <insert id="createCategory">
+        insert into categorytbl (
+            CategoryName
+        ) VALUES (
+            #{categoryName}
+        )
+    </insert>
+
+    <select id="getOneCategory" resultType="org.scoula.error_note.domain.CategoryVO">
+        select *
+        from categorytbl
+        where categoryId = #{categoryId}
+    </select>
+
+    <update id="updateCategory">
+        update categorytbl
+        set CategoryName = #{categoryName}
+        where CategoryId = #{categoryId}
+    </update>
+
+    <delete id="deleteCategory">
+        delete from categorytbl
+        where CategoryId = #{categoryId}
+    </delete>
+
+</mapper>
